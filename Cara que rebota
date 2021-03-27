@@ -1,0 +1,30 @@
+int rebote = 250;
+int rebote2 = 1;
+int ojo1 = 220;
+int ojo2 = 280;
+int boca = 250;
+
+
+void setup() {
+  size(500, 500);
+}
+
+void draw() {
+  if ((rebote >= width) || (rebote < 1)) {
+
+    rebote2 *= -1;
+  }
+  background(255);
+  rectMode(CENTER);
+  fill(255,255,0);
+  ellipse(rebote, 250, 100, 100);
+  fill(0);
+  ellipse(ojo1, 245, 20, 20);
+  ellipse(ojo2, 245, 20, 20);
+  fill(255);
+  arc(boca, 260, 60, 60, 0, PI, CHORD);
+  rebote = rebote +rebote2;
+  ojo1 = ojo1 +rebote2;
+  ojo2 = ojo2 +rebote2;
+  boca = boca +rebote2;
+}
